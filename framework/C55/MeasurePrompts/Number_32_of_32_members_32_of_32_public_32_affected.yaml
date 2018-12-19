@@ -1,0 +1,8 @@
+code: "Number of members of public affected"
+descriptionId: ""
+customFieldCode: "Number of injuries"
+isTimeVarying: false
+isRequired: false
+isComment: false
+shortPromptId: "Number of members of"
+promptTextId: "Number of members of public affected?"

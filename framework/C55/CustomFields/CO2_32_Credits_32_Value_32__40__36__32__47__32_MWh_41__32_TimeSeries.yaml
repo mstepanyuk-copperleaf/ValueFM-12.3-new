@@ -1,0 +1,7 @@
+code: "CO2 Credits Value ($ / MWh) TimeSeries"
+nameId: "CO2 Credits Value ($ / MWh) TimeSeries"
+descriptionId: "CO2 Credits Value ($ / MWh)"
+type: "DropDownList"
+isCloneable: true
+listType: "TimeSeries"
+listItems: []

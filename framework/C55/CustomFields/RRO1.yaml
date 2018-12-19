@@ -1,0 +1,17 @@
+code: "RRO1"
+nameId: "RRO1"
+descriptionId: "Impact on Submission Ability?"
+type: "DropDownList"
+isCloneable: true
+listType: "Custom"
+listItems:
+- code: "No impact"
+  nameId: "No impact"
+  value: 0
+  isObsolete: false
+- code: "Will make it possible to prepare rate submission or significantly increase\
+    \ likelihood of approval"
+  nameId: "Will make it possible to prepare rate submission or significantly increase\
+    \ likelihood of approval"
+  value: 1
+  isObsolete: false

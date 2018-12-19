@@ -1,0 +1,10 @@
+code: "OMAAnnualCostHigh"
+nameId: "O&M Annual Cost for assets with High ongoing maintenance costs"
+descriptionId: "O&M Annual Cost for assets with High ongoing maintanance costs (i.e.\
+  \ poor condition scores)"
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+isCurrencyValue: true
+maximumNumber: 1000000
+listItems: []

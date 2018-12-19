@@ -1,0 +1,13 @@
+code: "Number of DSE injuries"
+nameId: "Number of DSE injuries"
+descriptionId: "Number of DSE injuries"
+color: "#800202"
+consqUnitCode: "Number of DSE injuries"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

@@ -1,0 +1,47 @@
+code: "Compliance - Avoided Penalty"
+nameId: "Compliance - Avoided Penalty"
+descriptionId: "A model to evaluate the impact of compliance."
+groupCode: "Business impact"
+mustImpact: false
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Compliance - Avoided Penalty"
+  nameId: "Compliance - Avoided Penalty"
+  valueMeasureCode: "Compliance - Avoided Penalty"
+  sequence: 1
+questionnaires:
+- code: "Compliance baseline"
+  nameId: "Compliance"
+  descriptionId: "A questionaire to evaluate the benefit of compliance."
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "ProbPenFine"
+    sequence: 1
+  - measurePromptCode: "Penalty Amount"
+    sequence: 2
+  - measurePromptCode: "MandComment"
+    sequence: 3
+  formulas:
+  - measureCode: "Compliance - Avoided Penalty"
+    consequenceClassName: "ComplianceConsequence"
+    likelihoodClassName: "RiskLikelihoodManualBaseline"
+- code: "Compliance residual"
+  nameId: "Compliance"
+  descriptionId: "A questionaire to evaluate the benefit of compliance."
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "ProbPenFine"
+    sequence: 1
+  - measurePromptCode: "Penalty Amount"
+    sequence: 2
+  - measurePromptCode: "MandComment"
+    sequence: 3
+  formulas:
+  - measureCode: "Compliance - Avoided Penalty"
+    consequenceClassName: "ComplianceConsequenceOutcome"
+    likelihoodClassName: "RiskLikelihoodManualBaseline"

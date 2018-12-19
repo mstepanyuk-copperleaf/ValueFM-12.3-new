@@ -1,0 +1,8 @@
+code: "Manual Risk Probability"
+descriptionId: ""
+customFieldCode: "Manual Risk Probability"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Risk Probability"
+promptTextId: "Risk Probability"

@@ -1,0 +1,13 @@
+code: "Number of member of public minor injuries"
+nameId: "Number of member of public minor injuries"
+descriptionId: "Number of member of public minor injuries"
+color: "#800195"
+consqUnitCode: "Number of minor injuries"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

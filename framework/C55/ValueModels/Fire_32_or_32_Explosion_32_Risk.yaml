@@ -1,0 +1,76 @@
+code: "Fire or Explosion Risk"
+nameId: "Fire or Explosion Risk"
+descriptionId: "Fire or Explosion Risk"
+groupCode: "Safety & Security"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Fire or Explosion Risk"
+  nameId: "Fire or Explosion Risk"
+  valueMeasureCode: "Safety Risk"
+  sequence: 954
+- code: "Fire or Explosion Unmitigated High Risk"
+  nameId: "Fire or Explosion Unmitigated High Risk"
+  valueMeasureCode: "Unmitigated High Risk"
+  sequence: 955
+questionnaires:
+- code: "Fire or Explosion Risk-B"
+  nameId: "Fire or Explosion Risk"
+  descriptionId: "Fire or Explosion Risk"
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "FailureProbability"
+    sequence: 1
+  - measurePromptCode: "Gen Asset Prob Failure Creates Hazard"
+    sequence: 2
+  - measurePromptCode: "Gen Asset Prob Person In Danger Zone"
+    sequence: 3
+  - measurePromptCode: "Gen Asset Prob Person Injured"
+    sequence: 4
+  - measurePromptCode: "JustificationComment"
+    sequence: 6
+  formulas:
+  - measureCode: "Fire or Explosion Risk"
+    consequenceClassName: "BreakerSafetyConsequence"
+    likelihoodClassName: "FireOrExplosionLikelihood"
+- code: "Fire or Explosion Risk-Outcome Override-O"
+  nameId: "Fire or Explosion Risk Outcome Override"
+  descriptionId: "Fire or Explosion Risk Outcome Override"
+  isBaseline: false
+  isDefault: false
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "FailureProbability"
+    sequence: 1
+  - measurePromptCode: "Gen Asset Prob Failure Creates Hazard"
+    sequence: 2
+  - measurePromptCode: "Gen Asset Prob Person In Danger Zone"
+    sequence: 3
+  - measurePromptCode: "Gen Asset Prob Person Injured"
+    sequence: 4
+  - measurePromptCode: "JustificationComment"
+    sequence: 6
+  formulas:
+  - measureCode: "Fire or Explosion Risk"
+    consequenceClassName: "BreakerSafetyConsequence"
+    likelihoodClassName: "FireOrExplosionLikelihood"
+- code: "Fire or Explosion Risk-Outcome-O"
+  nameId: "Fire or Explosion Risk Outcome"
+  descriptionId: "Fire or Explosion Risk Outcome"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "RiskConsequence"
+    sequence: 1
+  - measurePromptCode: "RiskProbability"
+    sequence: 2
+  formulas:
+  - measureCode: "Fire or Explosion Risk"
+    consequenceClassName: "AutomaticMitigationConsequence"
+    likelihoodClassName: "ManualRiskOutcomeLikelihood"
+  - measureCode: "Fire or Explosion Unmitigated High Risk"
+    consequenceClassName: "UnmitigatedHighRiskFormula"

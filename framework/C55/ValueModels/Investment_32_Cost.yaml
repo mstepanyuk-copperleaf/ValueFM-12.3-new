@@ -1,0 +1,41 @@
+code: "Investment Cost"
+nameId: "Investment Cost"
+descriptionId: "Investment Cost"
+groupCode: "Financial"
+mustImpact: true
+investmentApplicability: "Mandatory"
+assetTypes: []
+measures:
+- code: "Capital Cost (CAPEX)"
+  nameId: "Capital Cost (CAPEX)"
+  valueMeasureCode: "Capital Cost (CAPEX)"
+  sequence: 36
+- code: "Customer Contribution Amount"
+  nameId: "Customer Contribution Amount"
+  valueMeasureCode: "Customer Contribution Amount"
+  sequence: 37
+- code: "Operating Cost (OPEX)"
+  nameId: "Operating Cost (OPEX)"
+  valueMeasureCode: "Operating Cost (OPEX)"
+  sequence: 38
+- code: "Total Investment Cost"
+  nameId: "Total Investment Cost"
+  valueMeasureCode: "Total Investment Cost"
+  sequence: 39
+questionnaires:
+- code: "Total Cost-O"
+  nameId: "Total Cost"
+  descriptionId: "Investment Cost"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Capital Cost (CAPEX)"
+    consequenceClassName: "CapitalCost"
+  - measureCode: "Customer Contribution Amount"
+    consequenceClassName: "CustomerContributionConsequenceMonthly"
+  - measureCode: "Operating Cost (OPEX)"
+    consequenceClassName: "OMACost"
+  - measureCode: "Total Investment Cost"
+    consequenceClassName: "TotalCost"

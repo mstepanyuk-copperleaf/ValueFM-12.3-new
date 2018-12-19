@@ -1,0 +1,8 @@
+code: "Additional Costs"
+nameId: "Additional Costs"
+descriptionId: "Additional Costs"
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+maximumNumber: 10000000000
+listItems: []

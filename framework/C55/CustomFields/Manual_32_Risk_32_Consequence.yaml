@@ -1,0 +1,7 @@
+code: "Manual Risk Consequence"
+nameId: "Manual Risk Consequence"
+descriptionId: "What is the probability of this event occurring?"
+type: "DropDownList"
+isCloneable: true
+listType: "FailureSeverity"
+listItems: []

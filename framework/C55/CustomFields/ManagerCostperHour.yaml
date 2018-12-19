@@ -1,0 +1,9 @@
+code: "ManagerCostperHour"
+nameId: "ManagerCostperHour"
+descriptionId: "Assumption - Manager & Engineer cost per hour - used in Employee Productivity\
+  \ Benefit"
+type: "Number"
+isCloneable: true
+numberDecimals: 2
+maximumNumber: 1000000
+listItems: []

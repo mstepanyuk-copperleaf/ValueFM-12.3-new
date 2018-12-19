@@ -1,0 +1,8 @@
+code: "Failure Probability"
+nameId: "Failure Probability"
+descriptionId: "The probability of failure."
+type: "Number"
+isCloneable: true
+numberDecimals: 2
+maximumNumber: 100
+listItems: []

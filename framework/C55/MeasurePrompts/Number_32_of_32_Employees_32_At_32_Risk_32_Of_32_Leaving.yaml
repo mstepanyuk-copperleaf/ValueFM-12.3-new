@@ -1,0 +1,10 @@
+code: "Number of Employees At Risk Of Leaving"
+descriptionId: ""
+customFieldCode: "Number of Employees At Risk Of Leaving"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "How many employees a"
+promptTextId: "How many employees are at significant risk of leaving the company (or\
+  \ their current position) if these improvements are not made?"
+defaultValue: "0"

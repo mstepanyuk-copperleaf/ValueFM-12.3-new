@@ -1,0 +1,8 @@
+code: "FailureProbability"
+descriptionId: "The probability of failure."
+customFieldCode: "Failure Probability"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Failure Probability"
+promptTextId: "Failure Probability (%)"

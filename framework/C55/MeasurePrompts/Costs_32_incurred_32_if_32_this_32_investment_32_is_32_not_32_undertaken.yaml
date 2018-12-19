@@ -1,0 +1,8 @@
+code: "Costs incurred if this investment is not undertaken"
+descriptionId: "Costs incurred if this investment is not undertaken ($)"
+customFieldCode: "Costs incurred if this investment is not undertaken"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Costs incurred if th"
+promptTextId: "Costs incurred if this investment is not undertaken ($)"

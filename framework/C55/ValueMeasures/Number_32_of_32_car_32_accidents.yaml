@@ -1,0 +1,13 @@
+code: "Number of car accidents"
+nameId: "Number of car accidents"
+descriptionId: "Number of car accidents"
+color: "#800203"
+consqUnitCode: "Number of car accidents"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

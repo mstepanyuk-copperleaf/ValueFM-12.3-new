@@ -1,0 +1,38 @@
+code: "Employee Engagement, Attraction & Retention"
+nameId: "Employee Engagement, Attraction & Retention"
+descriptionId: "Employee Engagement, Attraction & Retention"
+groupCode: "Stakeholders & Community"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Employee Engagement, Attraction and Retention"
+  nameId: "Employee Engagement, Attraction and Retention"
+  valueMeasureCode: "Employee Engagement, Attraction and Retention"
+  sequence: 17
+questionnaires:
+- code: "Employee Engagement, Attraction & Retention-O"
+  nameId: "Employee Engagement, Attraction & Retention"
+  descriptionId: "Employee Engagement, Attraction & Retention"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Number of Candidates Attracted"
+    sequence: 264
+  - measurePromptCode: "Number of Employees Affected"
+    sequence: 336
+  - measurePromptCode: "Number of Employees At Risk Of Leaving"
+    sequence: 404
+  - measurePromptCode: "Workplace Impact On Attractiveness"
+    sequence: 405
+  - measurePromptCode: "Workplace Impact On Productivity"
+    sequence: 414
+  - measurePromptCode: "Benefit Probability"
+    sequence: 420
+  - measurePromptCode: "Rationale"
+    sequence: 423
+  formulas:
+  - measureCode: "Employee Engagement, Attraction and Retention"
+    consequenceClassName: "ProductWorkplaceBenBenefitConsequence"
+    likelihoodClassName: "BenefitLikelihood"

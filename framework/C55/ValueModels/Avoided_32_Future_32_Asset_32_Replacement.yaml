@@ -1,0 +1,36 @@
+code: "Avoided Future Asset Replacement"
+nameId: "Avoided Future Asset Replacement"
+descriptionId: "Avoided Future Asset Replacement"
+groupCode: "Financial"
+mustImpact: true
+investmentApplicability: "NotApplicable"
+assetTypes: []
+measures:
+- code: "Avoided Future Asset Replacement"
+  nameId: "Avoided Future Asset Replacement"
+  valueMeasureCode: "Financial Benefits - CAPEX"
+  sequence: 33
+questionnaires:
+- code: "Avoided Future Asset Replacement-B"
+  nameId: "Avoided Future Asset Replacement"
+  descriptionId: ""
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Avoided Future Asset Replacement"
+    consequenceClassName: "NullBaseline"
+- code: "Avoided Future Asset Replacement-O"
+  nameId: "Avoided Future Asset Replacement"
+  descriptionId: ""
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: false
+  prompts:
+  - measurePromptCode: "Years to Certain Replacement"
+    sequence: 201
+  formulas:
+  - measureCode: "Avoided Future Asset Replacement"
+    consequenceClassName: "AvoidedFutureAssetReplacementConsequence"
+    likelihoodClassName: "AvoidedFutureAssetReplacementLikelihood"

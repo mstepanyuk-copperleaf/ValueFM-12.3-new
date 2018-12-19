@@ -1,0 +1,13 @@
+code: "Number of operative minor injuries"
+nameId: "Number of operative minor injuries"
+descriptionId: "Number of operative minor injuries"
+color: "#800192"
+consqUnitCode: "Number of minor injuries"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

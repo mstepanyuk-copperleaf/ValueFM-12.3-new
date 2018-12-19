@@ -1,0 +1,9 @@
+code: "Years to Certain Replacement"
+descriptionId: ""
+customFieldCode: "Years to Certain Replacement"
+isTimeVarying: false
+isRequired: true
+isComment: false
+shortPromptId: "Within how many year"
+promptTextId: "Within how many years is it certain that this asset will require a\
+  \ reactive replacement if proactive work is not done?"

@@ -1,0 +1,9 @@
+code: "Other Economic Benefit Amount"
+descriptionId: "Example:  Non-standard benefit such as external fees/commitments/penalties.\
+  \  Do not enter O&M savings here."
+customFieldCode: "Other Economic Benefit Amount"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Other annual economi"
+promptTextId: "Other annual economic benefit ($)"

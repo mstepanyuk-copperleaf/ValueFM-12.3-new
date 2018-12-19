@@ -1,0 +1,8 @@
+code: "FinancialRiskConsequence"
+nameId: "Financial Risk Consequence"
+descriptionId: "Select a value from the dropdown if you wish to override the default\
+  \ Financial Risk Consequence"
+type: "DropDownList"
+isCloneable: true
+listType: "FailureSeverity"
+listItems: []

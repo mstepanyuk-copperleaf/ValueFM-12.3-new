@@ -1,0 +1,25 @@
+code: "Skills to Manage the Project"
+nameId: "Skills to Manage the Project"
+descriptionId: "Skills to Manage the Project"
+type: "DropDownList"
+isCloneable: true
+listType: "Custom"
+listItems:
+- code: "A) Expecting vendor or SI to manage the project"
+  nameId: "A) Expecting vendor or SI to manage the project"
+  value: 0.021000000000000001
+  isObsolete: false
+- code: "B) Internal/Contract PM, no experience with projects of this type and scope"
+  nameId: "B) Internal/Contract PM, no experience with projects of this type and scope"
+  value: 0.016833333299999999
+  isObsolete: false
+- code: "C) Internal/Contract PM, positive experience with projects of this type and\
+    \ scope"
+  nameId: "C) Internal/Contract PM, positive experience with projects of this type\
+    \ and scope"
+  value: 0.012666666700000001
+  isObsolete: false
+- code: "D) Internal/Contract PM + vendor or SI roles clearly defined or not required"
+  nameId: "D) Internal/Contract PM + vendor or SI roles clearly defined or not required"
+  value: 0.0085000000000000006
+  isObsolete: false

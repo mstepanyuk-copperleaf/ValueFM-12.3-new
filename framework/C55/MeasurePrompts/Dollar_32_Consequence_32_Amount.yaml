@@ -1,0 +1,8 @@
+code: "Dollar Consequence Amount"
+descriptionId: ""
+customFieldCode: "Dollar Consequence Amount"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Enter the consequenc"
+promptTextId: "Enter the consequence amount in dollars ($)"

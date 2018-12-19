@@ -1,0 +1,8 @@
+code: "EnvironmentalRiskConsequence"
+nameId: "Environmental Risk Consequence"
+descriptionId: "Select a value from the dropdown if you wish to override the default\
+  \ Environmental Risk Consequence"
+type: "DropDownList"
+isCloneable: true
+listType: "FailureSeverity"
+listItems: []

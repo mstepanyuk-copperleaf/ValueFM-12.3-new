@@ -1,0 +1,9 @@
+code: "Gen Asset Prob Person Injured"
+descriptionId: "Probability of person being injured (%)"
+customFieldCode: "Gen Asset Prob Person Injured"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Probability of perso"
+promptTextId: "Probability of person being injured (%)"
+defaultValue: "100"

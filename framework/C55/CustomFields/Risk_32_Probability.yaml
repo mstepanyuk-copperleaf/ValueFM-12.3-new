@@ -1,0 +1,7 @@
+code: "Risk Probability"
+nameId: "Risk Probability"
+descriptionId: "A risk probability"
+type: "DropDownList"
+isCloneable: true
+listType: "Likelihood"
+listItems: []

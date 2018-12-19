@@ -1,0 +1,9 @@
+code: "OMAScalingFactor"
+nameId: "OMA Scaling Factor"
+descriptionId: ""
+type: "Number"
+isCloneable: true
+numberDecimals: 2
+isCurrencyValue: false
+maximumNumber: 10
+listItems: []

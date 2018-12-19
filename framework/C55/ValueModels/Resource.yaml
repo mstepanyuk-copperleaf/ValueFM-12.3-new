@@ -1,0 +1,29 @@
+code: "Resource"
+nameId: "Resource"
+descriptionId: "Resource"
+groupCode: "Financial"
+mustImpact: true
+investmentApplicability: "Mandatory"
+assetTypes: []
+measures:
+- code: "Engineering Design Hours Required"
+  nameId: "Engineering Design Hours Required"
+  valueMeasureCode: "Engineering Design Hours Required"
+  sequence: 50
+- code: "Project Manager Hours Required"
+  nameId: "Project Manager Hours Required"
+  valueMeasureCode: "Project Manager Hours Required"
+  sequence: 51
+questionnaires:
+- code: "Resources-O"
+  nameId: "Resources"
+  descriptionId: "Resource"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Engineering Design Hours Required"
+    consequenceClassName: "ResourceForecastEngineeringDesign"
+  - measureCode: "Project Manager Hours Required"
+    consequenceClassName: "ResourceForecastProjectManager"

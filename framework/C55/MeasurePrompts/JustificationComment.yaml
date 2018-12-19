@@ -1,0 +1,8 @@
+code: "JustificationComment"
+descriptionId: "Provide background information justifying selection of answers."
+customFieldCode: "Justification Comment"
+isTimeVarying: true
+isRequired: true
+isComment: true
+shortPromptId: "Justification Commen"
+promptTextId: "Justification Comment"

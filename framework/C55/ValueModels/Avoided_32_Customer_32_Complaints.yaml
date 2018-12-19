@@ -1,0 +1,55 @@
+code: "Avoided Customer Complaints"
+nameId: "Avoided Customer Complaints"
+descriptionId: "A model to evaluate the impact of complaints."
+groupCode: "Customers"
+mustImpact: false
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Complaint risk"
+  nameId: "Complaint risk"
+  valueMeasureCode: "Complaint risk"
+  sequence: 2
+- code: "Expected number of complaints"
+  nameId: "Expected number of complaints"
+  valueMeasureCode: "Expected Number of Complaints"
+  sequence: 1
+questionnaires:
+- code: "Complaints baseline"
+  nameId: "Complaints"
+  descriptionId: "A questionnaire to evaluate the impact of complaints."
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "CostOfComplaint"
+    sequence: 1
+  - measurePromptCode: "NoOfComplaints"
+    sequence: 2
+  - measurePromptCode: "Comment"
+    sequence: 3
+  formulas:
+  - measureCode: "Complaint risk"
+    consequenceClassName: "ComplaintRisk"
+  - measureCode: "Expected number of complaints"
+    consequenceClassName: "IdentityFormula"
+    likelihoodClassName: "ComplaintsNumber"
+- code: "Complaints residual"
+  nameId: "Complaints"
+  descriptionId: "A questionnaire to evaluate the impact of complaints."
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "CostOfComplaint"
+    sequence: 4
+  - measurePromptCode: "NoOfComplaints"
+    sequence: 5
+  - measurePromptCode: "Comment"
+    sequence: 6
+  formulas:
+  - measureCode: "Complaint risk"
+    consequenceClassName: "ComplaintRisk"
+  - measureCode: "Expected number of complaints"
+    consequenceClassName: "IdentityFormula"
+    likelihoodClassName: "ComplaintsNumber"

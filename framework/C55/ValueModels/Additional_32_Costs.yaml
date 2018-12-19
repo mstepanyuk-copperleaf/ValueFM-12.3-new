@@ -1,0 +1,50 @@
+code: "Additional Costs"
+nameId: "Additional Costs"
+descriptionId: "Additional Costs"
+groupCode: "Financial"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Additional Costs - Financial Benefits"
+  nameId: "Additional Costs - Financial Benefits"
+  valueMeasureCode: "Financial Benefits"
+  sequence: 71
+- code: "Additional Costs - O&M Budget Savings"
+  nameId: "Additional Costs - O&M Budget Savings"
+  valueMeasureCode: "O&M Budget Savings"
+  sequence: 75
+questionnaires:
+- code: "Additional Costs-O"
+  nameId: "Additional Costs"
+  descriptionId: "Additional Costs"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Additional Costs"
+    sequence: 1
+  - measurePromptCode: "Additional Hours"
+    sequence: 73
+  - measurePromptCode: "Account Type"
+    sequence: 144
+  - measurePromptCode: "Benefit Probability"
+    sequence: 145
+  - measurePromptCode: "Rationale"
+    sequence: 192
+  formulas:
+  - measureCode: "Additional Costs - Financial Benefits"
+    consequenceClassName: "AdditionalCostsTotalConsequence"
+    likelihoodClassName: "BenefitLikelihood"
+- code: "NullBaseline-Additional Costs-B"
+  nameId: "NullBaseline"
+  descriptionId: "Additional Costs"
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: false
+  prompts: []
+  formulas:
+  - measureCode: "Additional Costs - Financial Benefits"
+    consequenceClassName: "NullBaseline"
+  - measureCode: "Additional Costs - O&M Budget Savings"
+    consequenceClassName: "NullBaseline"

@@ -1,0 +1,53 @@
+code: "Cost Savings"
+nameId: "Cost Savings"
+descriptionId: "Cost Savings"
+groupCode: "Financial"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Cost Savings - Financial Benefits"
+  nameId: "Cost Savings - Financial Benefits"
+  valueMeasureCode: "Financial Benefits"
+  sequence: 60
+- code: "Cost Savings - O&M Budget Savings"
+  nameId: "Cost Savings - O&M Budget Savings"
+  valueMeasureCode: "O&M Budget Savings"
+  sequence: 63
+questionnaires:
+- code: "Cost Savings-O"
+  nameId: "Cost Savings"
+  descriptionId: "Cost Savings"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Account Type"
+    sequence: 15
+  - measurePromptCode: "Costs Saved"
+    sequence: 156
+  - measurePromptCode: "Hours Saved"
+    sequence: 196
+  - measurePromptCode: "Benefit Probability"
+    sequence: 208
+  - measurePromptCode: "Rationale"
+    sequence: 217
+  formulas:
+  - measureCode: "Cost Savings - Financial Benefits"
+    consequenceClassName: "CostSavingsTotalConsequence"
+    likelihoodClassName: "BenefitLikelihood"
+  - measureCode: "Cost Savings - O&M Budget Savings"
+    consequenceClassName: "CostSavingsOMAConsequence"
+    likelihoodClassName: "BenefitLikelihood"
+- code: "NullBaseline-Cost Savings-B"
+  nameId: "NullBaseline"
+  descriptionId: "Cost Savings"
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Cost Savings - Financial Benefits"
+    consequenceClassName: "NullBaseline"
+  - measureCode: "Cost Savings - O&M Budget Savings"
+    consequenceClassName: "NullBaseline"

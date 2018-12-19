@@ -1,0 +1,8 @@
+code: "PM's Previous Experience"
+nameId: "PM's Previous Experience"
+descriptionId: "PM's Previous Experience"
+type: "BigText"
+isMultiline: true
+isCloneable: true
+maximumLength: 10000
+listItems: []

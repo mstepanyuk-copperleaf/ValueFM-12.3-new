@@ -1,0 +1,8 @@
+code: "Hours incurred if this investment is undertaken"
+nameId: "Hours incurred if this investment is undertaken"
+descriptionId: "Hours incurred if this investment is undertaken"
+type: "Number"
+isCloneable: true
+numberDecimals: 2
+maximumNumber: 1000000000
+listItems: []

@@ -1,0 +1,13 @@
+code: "Asset residual value"
+nameId: "Asset residual value"
+descriptionId: "Asset residual value"
+color: "#800231"
+consqUnitCode: "Pound Sterling"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "None"
+measureCalculation: "Outcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

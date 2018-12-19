@@ -1,0 +1,8 @@
+code: "Hours Saved"
+nameId: "Hours Saved"
+descriptionId: "Labour Hours Saved"
+type: "Number"
+isCloneable: true
+numberDecimals: 2
+maximumNumber: 1000000000
+listItems: []

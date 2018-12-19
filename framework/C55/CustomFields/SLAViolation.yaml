@@ -1,0 +1,6 @@
+code: "SLAViolation"
+nameId: "SLA Violation"
+descriptionId: "SLA Violation"
+type: "CheckBox"
+isCloneable: true
+listItems: []

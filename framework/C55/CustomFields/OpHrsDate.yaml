@@ -1,0 +1,6 @@
+code: "OpHrsDate"
+nameId: "Date of Observed Operating Hours"
+descriptionId: ""
+type: "Date"
+isCloneable: true
+listItems: []

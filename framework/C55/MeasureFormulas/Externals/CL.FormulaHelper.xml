@@ -1,0 +1,1081 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CL.FormulaHelper</name>
+    </assembly>
+    <members>
+        <member name="T:CL.FormulaHelper.CLAssemblyBuildAttribute">
+            <summary>
+            This is the string that TFS/team-build creates to identify a given build.
+            
+            IMPORTANT: This file is used by other C55 related application (e.g. Duke data adapter) which may not
+            has direct access to any C55 assemblies!
+            
+            </summary>
+            <remarks>
+            Examples are:
+                 Test Build_20150306.1
+                 R8_2 Build_20150305.3
+            </remarks>
+        </member>
+        <member name="M:CL.FormulaHelper.CLAssemblyBuildAttribute.#ctor(System.String)">
+            <summary>
+            This is the string that TFS/team-build creates to identify a given build.
+            Examples are:
+                 Test Build_20150306.1
+                 R8_2 Build_20150305.3
+            </summary>        
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.CommonCodeAttribute">
+            <summary>
+            Attribute which identifies common source code (such as constants files or common static functions)
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.Attributes.CommonCodeAttribute.FilePath">
+            <summary>
+            The file path.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.Attributes.CommonCodeAttribute.LineNumber">
+            <summary>
+            The line number.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.Attributes.CommonCodeAttribute.#ctor(System.String,System.Int32)">
+            <summary>
+            Construct a common code attribute.
+            </summary>
+            <param name="filePath">The file path.</param>
+            <param name="lineNumber">The line number.</param>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.CustomFieldInputAttribute">
+            <summary>
+            Attribute for a Custom Field Input.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.CustomFieldInputAttribute.FormulaInputAssociatedEntity">
+            <summary>
+            The entity this custom field is associated with. One custom field
+            can be associated with multiple entity types (eg: Asset, Alternative)
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.FormulaAttribute">
+            <summary>
+            Attribute which identifies a formula and stores the formulas source filename and path
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.FormulaBaseAttribute">
+            <summary>
+            Attribute which identifies a formula base class
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.FormulaInputAttributeBase">
+            <summary>
+            Common base class for all formula input attribute classes
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.FormulaInputAttributeBase.FormulaInputAssociatedEntity">
+            <summary>
+            The entity this core field is associated with.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.MeasureInputAttribute">
+            <summary>
+            Attribute for a Measure Input. A Measure input is a formula input where the data is the output of another measure
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.MeasureInputAttribute.FormulaInputAssociatedEntity">
+            <summary>
+            Override of associated entity property - always a measure
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.MeasureInputAttribute.MeasureSetCode">
+            <summary>
+            Measure Set to retrieve the Output Values from
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.MeasureInputAttribute.MeasureCode">
+            <summary>
+            Measure to retrieve the Output Values from
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.MeasureInputAttribute.MeasureOutputType">
+            <summary>
+            The type of measure output to be selected for input.  For consequence
+            formula this can be either consequence units or zynos.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.MeasureInputAttribute.AlwaysUseBaselineOutput">
+            <summary>
+            Determines whether Baseline outputs from another formula are always used, or if they are only used when calculating the baseline values.
+            Example logic below:
+            
+            If AlwaysUseBaselineOutput is false, the following will occur:
+               If the Formula is being used to calculate Baseline values
+                   The Baseline output Values from MeasureSet/Measure defined above will be used as inputs to this formula
+               Else If the Formula is being used to calculate Impact values, the Baseline output from MeasureSet/Measure defined above will be used as inputs
+                   The Impact output Values from MeasureSet/Measure defined above will be used as inputs to this formula
+            Else if AlwaysUsBaselineOutput is true
+               If the Formula is being used to calculate Baseline values
+                   The Baseline output Values from MeasureSet/Measure defined above will be used as inputs to this formula
+               Else If the Formula is being used to calculate Impact values, the Baseline output from MeasureSet/Measure defined above will be used as inputs
+                   The *Baseline output Values from MeasureSet/Measure defined above will be used as inputs to this formula
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.PromptInputAttribute">
+            <summary>
+            Attribute used to mark prompt formula input properties
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.PromptInputAttribute.FormulaInputAssociatedEntity">
+            <summary>
+            Override of associated entity property - always a prompt
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Attributes.CoreFieldInputAttribute">
+            <summary>
+            Attribute used to mark prompt system input properties
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.Attributes.CoreFieldInputAttribute.GetFormulaInputAssociatedEntity(CL.FormulaHelper.FormulaCoreFieldInputType)">
+            <summary>
+            Determine the type of entity associated with a core field formula input.
+            </summary>
+            <param name="coreFieldInputType">The type of core field</param>
+            <returns>The associated entity</returns>
+            <exception cref="T:System.NotSupportedException">If the input type is unknown.</exception>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.CoreFieldInputAttribute.FormulaInputAssociatedEntity">
+            <summary>
+            The entity this core field is associated with.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.Attributes.CoreFieldInputAttribute.SystemInputType">
+            <summary>
+            The type of core field input
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.AssetUnitOfProperty">
+            <summary>
+            Enumeration to indicate the asset's unit of property
+            Please update CL.BusinessInterfaces.Enums.AssetUnitOfProperty.cs if changes are made to this file.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaInternalBase">
+            <summary>
+            Base class for all Internal Formulas.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.InvestmentStage">
+            <summary>
+            Enumeration for the investment stage.
+            Please update CL.BusinessInterfaces.Enums.ExpenditureStage.cs if changes are made to this file.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.InvestmentStage.Invalid">
+            <summary>
+            Not a valid stage value.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.InvestmentStage.Created">
+            <summary>
+            In the UI this was formerly know as 'draft', but is now 'initial'.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.InvestmentStage.Rejected">
+            <summary>
+            Investment has been explicitly rejected.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.InvestmentStage.Merged">
+            <summary>
+            Investment (spend lines, etc.) has been merged into another investment.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Constants">
+            <summary>
+             Constants which are shared between the formula helper assembly and the C55 codebase
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.AlternativeMilestoneSetDTO">
+            <summary>
+            AlternativeMilestone information for formula input
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.NumericValueRangeDictDTO">
+            <summary>
+            DTO to wrap dictionary of NumericValueRangeDTO.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.RiskLevelRangeDTO">
+            <summary>
+            Class describing a named value ranged with minimum and maximum, and a textual name.
+            Used to describe Risk level ranges from the RISK_LEVEL table.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.RiskLevelRangeDictDTO">
+            <summary>
+            DTO to wrap dictionary of RiskLevelRangeDTO.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.ConsequenceGroupDTO">
+            <summary>
+            Currently only used for Asset Generation Group information for Asset Analytics.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.DistributionByResourceDTO">
+            <summary>
+            DTO to store spend resource units and currency amounts.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.DistributionByResourceDTO.ResourceValues">
+            <summary>
+            Monthly spend for each resource and, if pricing information is available,
+            the resource price time series applicable to the spend.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.ResourceSpendDTO">
+            <summary>
+            DTO to store monthly unit and currency spend values for a Resource and,
+            if there is pricing information for the resource, the particular resource price time series applicable to the spend.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.ResourceSpendDTO.SpendValues">
+            <summary>
+            A dictionary of Spend Values (unit amount and currency amount) for the resource.
+            The key is the offset in months from the startFiscalYear passed into the formula.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.ResourceSpendDTO.AddToSpendValues(System.Int32,System.Double,System.Double)">
+            <summary>
+            Append the passed in unit and currency values to the spend value dictionary at the supplied offset
+            from the startFiscalYear passed into the formula.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.AlternativeMilestoneDTO">
+            <summary>
+            AlternativeMilestone information for formula input
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.StrategyAlternativeDTO">
+            <summary>
+            StrategyAlternative information for formula input
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.AccountDTO">
+            <summary>
+            Represents a spend account.
+            Includes account type information.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.FacilityDTO">
+            <summary>
+            Represents a facility.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.NumericValueRangeDTO">
+            <summary>
+            Class describing a named value range with minimum, maximum and average values and a textual code and name.
+            Used to describe Likelihood and Consequence 'bucketized' values from the FAILURE_SEVERITY and LIKELIHOOD tables
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.TimeSeriesDTO.UninflatedRefFiscalYear">
+            <summary>
+            The values in the time series are persisted uninflated with respect to the start of this fiscal year.
+            Null if the time series values are not subject to inflation.
+            <para>
+            Note that when values of this time series are input to a formula the values have already been
+            inflated to either the start of the current fiscal year or, in special circumstances, to the
+            start of some other fiscal year (e.g., in the case of predictive analytics).
+            </para>
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.TimeSeriesDTO.UnitCode">
+            <summary>
+            Code of the unit used by values in the time series.
+            Null if the values are unitless.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.TimeSeriesDTO.ResourceCode">
+            <summary>
+            Code of the resource that this time series pertains to.
+            Null if the time series isn't associated with a resource.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.TimeSeriesDTO.GetMonthlyValue(System.Int32,System.Int32)">
+            <summary>
+            Get the monthly value of the timeseries for the specified
+            fiscal year and month offset (from that fiscal year).
+            Propagates values forward and backward. Negative offsets are allowed.
+            This call is only for Absolute TimeSeries offset types.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.TimeSeriesDTO.GetMonthlyValue(System.Int32)">
+            <summary>
+            Get the monthly value of the timeseries for the specified
+            fiscal year and month offset (from that fiscal year).
+            Propagates values forward. Negative offsets are not allowed.
+            This call is only for Relative TimeSeries offset types.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.AssetExtentDTO">
+            <summary>
+            The geographical extent of an asset.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.CurvePointDTO">
+            <summary>
+            A point on a curve. Used by XYCurveDTO.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.CustomFieldListItemDTO">
+            <summary>
+            A single custom field list item.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO.AccountSpendValues">
+            <summary>
+            Simplified representation of the spend.
+            Spend is grouped into various account types.
+            </summary>
+            <remarks>
+            There could be more complex representations as well, driven off of the same provisioned forecast calculator.
+            We use a list for now as there should typically be a very small number of account types.
+            </remarks>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.AccountTypeSpendDTO">
+            <summary>
+            Monthly spend values for one account type.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.AccountTypeSpendDTO.IsAccountTypeIncludedForEndOfSpend">
+            <summary>
+            If true, the timing of spend amounts that use this account type should be considered
+            when determining the so-called 'end of spend' of the forecast.
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.DTOs.AccountTypeSpendDTO.SpendValues">
+            <summary>
+            A dictionary of Spend Values for the account type. The key is the offset
+            in months from the startFiscalYear passed into the formula
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.MonthValueDTO">
+            <summary>
+            Defines a triple of: month offset, duration, value.
+            This is passed into various interpolation functions which can turn a list of MonthValueDTO into an array of double.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.DTOs.XYCurveDTO">
+            <summary>
+            Class representing a Curve input.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.XYCurveDTO.XFromY(System.Double)">
+            <summary>
+            Given a value on the Y-axis, return the corresponding value of X. Uses linear interpolation
+            to derive the value of X. This method throws a System.InvalidOperationException if there
+            are no points in the curve.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.XYCurveDTO.YFromX(System.Double)">
+            <summary>
+            Given a value on the X-axis, return the corresponding value of Y. Uses linear interpolation
+            to derive the value of Y. This method throws a System.InvalidOperationException if there
+            are no points in the curve.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.DTOs.XYCurveDTO.YFromXWithLastUsedIndex(System.Double,System.Int32@)">
+            <summary>
+            Given a value on the X-axis, return the corresponding value of Y. Uses linear interpolation
+            to derive the value of Y. This method throws a System.InvalidOperationException if there
+            are no points in the curve.
+            The lastUsedIndex parameter is used to improve performance by providing a starting point
+            in the curve array when searching. This is useful when a loop is slowly following a curve (ie
+            incrementing the x value).
+            Typically, lastUsedIndex should be set to 0 the first time this function is called. Subsequent 
+            calls should use the same lastUsedIndex set by this function.
+            Performance for curves with large number of points is significantly improved over the YFromX
+            function when there are multiple lookups and the x value is slowly increasing or decreasing.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaConsequenceBase">
+            <summary>
+            Base class for all Consequence Formulas.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaInputAssociatedEntity">
+            <summary>
+             The type of entity this input is associated with.
+             In particular, custom fields can be associated with multiple entities - when a formula
+             needs a custom field as an input, we need to know which entity it is associated with.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaBase">
+            <summary>
+            Base class for all formulas.
+            Contains Curve and other utility functions
+            </summary>
+        </member>
+        <member name="P:CL.FormulaHelper.FormulaBase.FiscalYearEndMonth">
+            <summary>
+            The fiscal year end month.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.SetLogDebugMessageAction(System.Action{System.String})">
+            <summary>
+            Set the log debug callback action
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.LogDebugMessage(System.String)">
+            <summary>
+            Log a debug message. If running in the standalone formula solution, the debug message
+            is logged to the Developer Studio output window. If a 'debug' output request
+            is initiated from the alternative value ui, the debug messages will end up in the
+            downloaded zip file.
+            </summary>
+            <param name="message">string to log</param>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.ConvertDateTimeToOffset(System.DateTime,System.Int32)">
+            <summary>
+            Convert the passed in DateTime to a month offset from the passed in startFiscalYear.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GetCalendarDateTime(System.Int32,System.Int32)">
+            <summary>
+            Get the calendar date for a given fiscal year and period.
+            </summary>
+            <param name="fiscalYear">The fiscal year.</param>
+            <param name="fiscalPeriod">The fiscal period, which must be between 1 and 12.</param>
+            <returns>The calendar date corresponding to the given fiscal year and period.</returns>
+        </member>
+        <member name="P:CL.FormulaHelper.FormulaBase.KeyValueCache">
+            <summary>
+            Key value cache for use by the formula code to share calculated values between formulas.
+            The cache has the duration of the measure calculator which is executing the formula.
+            In order for the formula runner to operate correctly, formulas should not assume that
+            a value is in the cache (they should calculate the value if it doesn't exist). When the
+            formula runner executes, the cache will always be empty.
+            NOTE: The cache keys are CASE-INSENSITIVE strings
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.PopulateOutputWithValue(System.Int32,System.Nullable{System.Double})">
+            <summary>
+            temporary helper function to populate an array of double?[] with a value
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.ConvertUnitsToZynos(System.Nullable{System.Double}[],System.Double)">
+            <summary>
+            Convert an array of unit values (e.g., dollars) to zynos.
+            </summary>
+            <param name="units">The unit values.</param>
+            <param name="unitToZynoConversionFactor">The unit to zyno conversion factor.</param>
+            <returns>An array of zyno values.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.InterpolatePropagate``1(System.Collections.Generic.IReadOnlyList{CL.FormulaHelper.DTOs.ITimeVariantInputDTO},System.Int32,System.Int32,System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+            Propagate the values in a sparse list of time variant inputs into an array of months.
+            If an input has a zero duration its calculated value is propagated forward to the
+            month immediately prior to the next input or, if the input is the last one, to the
+            end of the array of months.
+            If an input has null (infinite) or positive duration, its calculated value is used through its duration.
+            The inputs are assumed to be ordered by increasing start time.
+            The value of each is determined by the passed-in Lambda function.
+            Null values are ignored, not propagated.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.InterpolatePropagate(System.Collections.Generic.IReadOnlyList{CL.FormulaHelper.DTOs.MonthValueDTO},System.Int32)">
+            <summary>
+            Propagate the values in sparse list of MonthValueDTOs into an array of months.
+            If a DTO has a zero duration its value is propagated forward to the month
+            immediately prior to the next DTO or, if the DTO is the last one, to the
+            end of the array of months.
+            If a DTO has a null (infinite) or positive duration, its value is used through its duration.
+            Null values are ignored, not propagated.
+            The input DTOs are assumed to be ordered by increasing month offset.
+            </summary>
+            <param name="inputValues">array of monthValueDTOs</param>
+            <param name="monthsOfOutputData">months of data to output (size of the output array)</param>
+            <returns>The months array.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.InterpolateCurve``1(System.Collections.Generic.IReadOnlyList{CL.FormulaHelper.DTOs.ITimeVariantInputDTO},System.Int32,System.Int32,CL.FormulaHelper.DTOs.XYCurveDTO,System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+            Interpolate the sparse list of values into an array of months using the supplied curve.
+            The X axis for the curve is assumed to be years, not months.
+            The value is determined by the passed in Lambda function.
+            Inputs for which the Lambda function returns null are ignored.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.InterpolateCurve(System.Collections.Generic.IReadOnlyList{CL.FormulaHelper.DTOs.MonthValueDTO},System.Int32,CL.FormulaHelper.DTOs.XYCurveDTO)">
+            <summary>
+            Interpolate the sparse list of values into an array of months using the supplied curve.
+            The X axis for the curve is assumed to be years, not months.
+            Null input values are ignored.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.MonthlyConditionScores``1(System.Int32,System.Int32,System.Nullable{System.DateTime},System.Collections.Generic.IReadOnlyList{CL.FormulaHelper.DTOs.ITimeVariantInputDTO},CL.FormulaHelper.DTOs.XYCurveDTO,System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+            Determine the monthly condition scores given an optional in-service date, time-variant data representing
+            the known condition scores at different points in time, and the annual condition decay curve.
+            The in-service date is used if the number of time-variant data points is 0, and to derive condition score
+            values prior to the first condition score in the time-variant data.
+            </summary>
+            <typeparam name="T">The DTO type used to represent the time-variant data, which must implement
+                the ITimeVariantInputDTO interface.</typeparam>
+            <param name="startFiscalYear">The start fiscal year.</param>
+            <param name="months">The number of months for which condition scores should be obtained.</param>
+            <param name="inServiceDate">The in-service date of the asset, if any.</param>
+            <param name="timeVariantData">The time-variant data containing condition scores for different points
+                in time, if any.  The time-variant data is assumed to be in ascending order.</param>
+            <param name="annualConditionDecayCurve">The annual condition decay curve.  If the condition decay curve
+                is null, then a 'flat' curve will be assumed, in which the same value for the condition score projects
+                forwards in time - i.e., the condition score will not decay.</param>
+            <param name="timeVariantInputConditionScore">A function that returns the condition score for a given
+                time-variant data point.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="timeVariantData"/>
+                or <paramref name="timeVariantInputConditionScore"/> are null.</exception>
+            <returns>The monthly condition scores, or null if the monthly condition scores cannot be determined.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.ApplyCurveYFromX(System.Nullable{System.Double}[],System.Int32,CL.FormulaHelper.DTOs.XYCurveDTO)">
+            <summary>
+            Apply the YFromX function of specified curve to the passed in array.
+            </summary>
+            <param name="inputArray">The array of values to which the curve will be applied.</param>
+            <param name="months">The number of months to use for the output array.</param>
+            <param name="curve">The curve to be applied to the input array to derive the output array.</param>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.IsBestConditionScoreMetOrExceeded(System.Double,System.Double,System.Double)">
+            <summary>
+            Determine whether the given condition score equals or exceeds (in the sense of representing a better
+            condition score) the best condition score.
+            Note that the numeric value of the 'best' condition score won't always be higher than the numeric value
+            of the 'worst' condition score.  For example, some customers will have 0 representing the worst condition
+            score and 10 representing the best condition score, whereas other customers will use 0 to represent the
+            best condition score and 10 will represent the worst condition score.
+            </summary>
+            <param name="conditionScore">The condition score.</param>
+            <param name="bestConditionScore">The best condition score.</param>
+            <param name="worstConditionScore">The worst condition score.</param>
+            <returns>True if <paramref name="conditionScore"/> equals or exceeds (in the sense of representing
+                a better condition score) the best condition score.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.MonthlyEventProbabilities(System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Determine the monthly event probabilities (typically monthly failure probabilities) given the
+            monthly condition scores and the curve for mapping condition scores to annual conditional probabilities
+            of the event occurring.  The conditional probabilities are assumed to be conditional on surviving to
+            the beginning of the relevant month.
+            </summary>
+            <param name="monthlyConditionScores">The monthly condition scores.</param>
+            <param name="conditionScoreToConditionalEventProbability">The curve that maps condition scores
+                to annual conditional event probabilities.</param>
+            <param name="bestConditionScore">An optional parameter for the best condition score for the event
+                being modeled.  If this parameter has a value then <paramref name="worstConditionScore"/> must also
+                have a value.  The bestConditionScore will typically be the best possible condition score and would
+                represent a new asset, however, it's possible that if the event being modeled is (say) a refurbishment
+                then the bestConditionScore may represent the condition score following the refurbishment and may be
+                lower than the best possible condition score.  If a value is supplied for the best condition score,
+                then the calculations will assume that a new lifetime should be analyzed starting from whenever
+                the monthly condition score is the best condition score or higher. This has the effect of resetting
+                the cumulative survival probability to 1, and allows analysis over multiple event lifetimes.</param>
+            <param name="worstConditionScore">An optional parameter for the worst condition score.
+                If this parameter has a value then <paramref name="bestConditionScore"/> must also have a value.</param>
+            <exception cref="T:System.ArgumentNullException">
+                Thrown if <paramref name="bestConditionScore"/> is null and <paramref name="worstConditionScore"/> is non-null.
+                Thrown if <paramref name="bestConditionScore"/> is non-null and <paramref name="worstConditionScore"/> is null.
+            </exception>
+            <returns>The monthly probabilities of the event occurring.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.MonthlyEventProbabilities(System.Nullable{System.Double}[],System.Int32,CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Determine the monthly event probabilities (typically monthly failure probabilities) given the
+            monthly condition scores and the curve for mapping condition scores to annual conditional probabilities
+            of the event occurring.  The conditional probabilities are assumed to be conditional on surviving to
+            the beginning of the relevant month.
+            </summary>
+            <param name="monthlyConditionScores">The monthly condition scores.</param>
+            <param name="startOffset">The offset from the start of the montly condition scores at which
+            to begin the probability calculations.</param>
+            <param name="conditionScoreToConditionalEventProbability">The curve that maps condition scores
+                to annual conditional event probabilities.</param>
+            <param name="bestConditionScore">An optional parameter for the best condition score for the event
+                being modeled.  If this parameter has a value then <paramref name="worstConditionScore"/> must also
+                have a value.  The bestConditionScore will typically be the best possible condition score and would
+                represent a new asset, however, it's possible that if the event being modeled is (say) a refurbishment
+                then the bestConditionScore may represent the condition score following the refurbishment and may be
+                lower than the best possible condition score.  If a value is supplied for the best condition score,
+                then the calculations will assume that a new lifetime should be analyzed starting from whenever
+                the monthly condition score is the best condition score or higher. This has the effect of resetting
+                the cumulative survival probability to 1, and allows analysis over multiple event lifetimes.</param>
+            <param name="worstConditionScore">An optional parameter for the worst condition score.
+                If this parameter has a value then <paramref name="bestConditionScore"/> must also have a value.</param>
+            <exception cref="T:System.ArgumentException">
+                Thrown if <paramref name="startOffset"/> is less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+                Thrown if <paramref name="bestConditionScore"/> is null and <paramref name="worstConditionScore"/> is non-null.
+                Thrown if <paramref name="bestConditionScore"/> is non-null and <paramref name="worstConditionScore"/> is null.
+            </exception>
+            <returns>The monthly probabilities of the event occurring.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.MonthlyImpactProbabilities(System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Determine the monthly impact event probabilities (typically monthly failure probabilities) given the
+            monthly baseline and impact condition scores and the curves for mapping baseline and impact condition
+            scores to monthly conditional probabilities of the event occurring.  The conditional probabilities
+            are assumed to be conditional on surviving to the beginning of the relevant month.
+            </summary>
+            <param name="monthlyBaselineConditionScores">The monthly baseline condition scores.</param>
+            <param name="baselineConditionScoreToConditionalEventProbability">The curve that maps baseline condition
+                scores to monthly conditional event probabilities.</param>
+            <param name="monthlyImpactConditionScores">The monthly impact condition scores.</param>
+            <param name="impactConditionScoreToConditionalEventProbability">The curve that maps impact condition scores
+                to monthly conditional event probabilities.  This may be a different curve than that used for the baseline.</param>
+            <param name="bestConditionScore">An optional parameter for the best condition score
+                for the event being modeled.  If this parameter has a value then <paramref name="worstConditionScore"/>
+                must also have a value.  The bestConditionScore will typically be the best possible condition score
+                and would represent a new asset, however, it's possible that if the event being modeled is (say)
+                a refurbishment then the bestConditionScore may represent the condition score following the
+                refurbishment and may be lower than the best possible condition score.  If a value is supplied
+                for the best condition score, then the calculations will assume that a new lifetime should be
+                analyzed starting from whenever the monthly condition score is the best condition score or higher.
+                This has the effect of resetting the cumulative survival probability to 1, and allows analysis
+                over multiple event lifetimes.</param>
+            <param name="worstConditionScore">An optional parameter for the worst condition score.
+                If this parameter has a value then <paramref name="bestConditionScore"/> must also have a value.</param>
+            <returns>The monthly probabilities of the impact event occurring.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                Thrown if <paramref name="bestConditionScore"/> is null and <paramref name="worstConditionScore"/> is non-null.
+                Thrown if <paramref name="bestConditionScore"/> is non-null and <paramref name="worstConditionScore"/> is null.
+            </exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.MonthlyBaselineProbabilitiesUntilImpact(System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double}[],System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Determine the monthly baseline event probabilities (typically monthly failure probabilities) up until
+            the first non-null impact value.  This is useful, for example, when probabalistically calculating the
+            reactive replacement costs; reactive costs will be incurred up until the point in time of the
+            impact (i.e., the intervention/replacement).
+            </summary>
+            <param name="monthlyBaselineConditionScores">The monthly baseline condition scores.</param>
+            <param name="baselineConditionScoreToConditionalEventProbability">The curve that maps baseline condition
+                scores to monthly conditional event probabilities.</param>
+            <param name="monthlyImpactValues">The monthly impact values - e.g., monthly impact condition scores.</param>
+            <param name="bestConditionScore">An optional parameter for the best condition score for the event
+                being modeled.  If this parameter has a value then <paramref name="worstConditionScore"/> must also
+                have a value.  The bestConditionScore will typically be the best possible condition score and would
+                represent a new asset, however, it's possible that if the event being modeled is (say) a refurbishment
+                then the bestConditionScore may represent the condition score following the refurbishment and may be
+                lower than the best possible condition score.  If a value is supplied for the best condition score,
+                then the calculations will assume that a new lifetime should be analyzed starting from whenever
+                the monthly condition score is the best condition score or higher.  This has the effect of resetting
+                the cumulative survival probability to 1, and allows analysis over multiple event lifetimes.</param>
+            <param name="worstConditionScore">An optional parameter for the worst condition score.
+                If this parameter has a value then <paramref name="bestConditionScore"/> must also have a value.</param>
+            <returns>The monthly baseline probabilities of the event occurring prior to the impact.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.ProbabilityEventDoesNotOccurPriorToImpact(System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Nullable{System.Double}[],System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Determine the cumulative probability that an event will not occur prior to an impact.  This is useful,
+            for example, when probabalistically calculating proactive replacement costs; proactive costs can only
+            be incurred if an asset failure does not occur prior to the impact (i.e., the intervention).
+            </summary>
+            <param name="monthlyBaselineConditionScores">The monthly baseline condition scores.</param>
+            <param name="baselineConditionScoreToConditionalEventProbability">The curve that maps baseline condition
+                scores to monthly conditional event probabilities.</param>
+            <param name="monthlyImpactValues">The monthly impact values - e.g., monthly impact condition scores.</param>
+            <param name="bestConditionScore">An optional parameter for the best condition score for the event
+                being modeled.  If this parameter has a value then <paramref name="worstConditionScore"/> must also
+                have a value.  The bestConditionScore will typically be the best possible condition score and would
+                represent a new asset, however, it's possible that if the event being modeled is (say) a refurbishment
+                then the bestConditionScore may represent the condition score following the refurbishment and may be
+                lower than the best possible condition score.  If a value is supplied for the best condition score,
+                then the calculations will assume that a new lifetime should be analyzed starting from whenever
+                the monthly condition score is the best condition score or higher.  This has the effect of resetting
+                the cumulative survival probability to 1, and allows analysis over multiple event lifetimes.</param>
+            <param name="worstConditionScore">An optional parameter for the worst condition score.
+                If this parameter has a value then <paramref name="bestConditionScore"/> must also have a value.</param>
+            <returns>An array with the cumulative the probability of non-occurrence at the offset of the
+                first impact value, or null if the cumulative probability cannot be determined.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.EventProbability(System.Nullable{System.Double},System.Double@)">
+            <summary>
+            Convert a monthly conditional event probability and a cumulative event probability to a probability of
+            the event occurring, and update the cumulative event probability.
+            </summary>
+            <param name="conditionalProbability">The conditional probability of an event occurring given that
+                the event has not occurred prior to the beginning of the month under consideration.
+                A conditional probability greater than 1 will be truncated to 1 when calculating the probability
+                of the event occurring (although a number greater than 1 is not a valid probability, sometimes
+                conditional probabilities are treated as frequencies).</param>
+            <param name="cumulativeSurvivalProbability">The cumulative probability that the event has not occurred
+                prior to the beginning of the month under consideration.  The cumulative probability will be updated
+                to be the cumulative probability that the event has not occurred prior to beginning of the next month.</param>
+            <returns>The probability of the event occurring during the month under consideration.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="conditionalProbability"/> is negative.</exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.ConvertConditionToMonthlyProbability(System.Nullable{System.Double}[],CL.FormulaHelper.DTOs.XYCurveDTO,System.Boolean)">
+            <summary>
+            Convert monthly condition score values to monthly failure probabilities.
+            </summary>
+            <param name="conditions">The monthly condition scores.</param>
+            <param name="failureCurve">The condition score to failure curve that maps condition scores
+                to annual failure probabilities.</param>
+            <param name="treatProbabilityAsFrequency">If true then the annual failure probabilities are treated
+                as if they are frequencies - i.e., monthly probabilities are obtained by dividing the annual
+                probability by 12.  If false then the conversion from annual to monthly probabilities will be
+                done by taking the 12th root of the survival probability.</param>
+            <returns>The monthly failure probabilities.</returns>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaBase.MyTimeVariantConditionDTO">
+            <summary>
+            Helper class for creating time-variant answers related to condition scores.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.PdfValuesWithSubsampling(System.Int32,System.Int32,System.Int32,System.Nullable{System.Double}[],System.Nullable{System.Double},System.Nullable{System.Double},CL.FormulaHelper.DTOs.XYCurveDTO,CL.FormulaHelper.DTOs.XYCurveDTO,System.Int32)">
+            <summary>
+            Determine the probability density function values for the failure of an asset and incorporate the lifetime
+            of its reactive replacement asset in the probabilities.  This means that the total sum of all of the probabilities
+            will exceed 1 because we are modeling 2 asset lifetimes - the lifetime of the current asset, and the
+            lifetime of its (reactive) replacement asset.  Subsampling is used to determine the probability of failure
+            of the reactive replacement asset, because we don't know exactly when the reactive replacement will occur.
+            If the condition scores contain a value that is at least equal to <paramref name="bestConditionScore"/>,
+            then a new asset lifetime will be assumed from that point forwards and the subsampling will begin
+            anew for reactive replacements of the new asset.
+            </summary>
+            <param name="startFiscalYear">The start fiscal year.</param>
+            <param name="months">The number of months.</param>
+            <param name="startOffset">The start offset at which the PDF calculations should begin.  A typical usage
+            of this parameter would be to delay probability calculations until a year or so in the future.</param>
+            <param name="monthlyConditionScores">The monthly condition scores of the current asset.</param>
+            <param name="bestConditionScore">The best condition score.</param>
+            <param name="worstConditionScore">The worst condition score.</param>
+            <param name="conditionDecayCurve">The condition decay curve.</param>
+            <param name="conditionScoreToConditionalEventProbability">The condition to failure curve.</param>
+            <param name="numberOfSubsamples">The number of subsamples.</param>
+            <returns>The probability density values including the lifetime of the reactive replacement asset.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GetTestCurve">
+            <summary>
+            Returns a test curve that can be used in unit tests.
+            </summary>
+            <returns>A test curve.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FindEndOfSpendMonth(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.Boolean)">
+            <summary>
+            Find the end of spend month offset.
+            The end of spend is the last non-null spend value in any of the account types
+            (unless <paramref name="restrictToAccountTypesIncludedInEndOfSpendDetermination"/> is true,
+            in which case only spend in some account types is considered).
+            </summary>
+            <param name="months">(unused)</param>
+            <param name="investmentSpendByAccountType">Spend by account type.</param>
+            <param name="restrictToAccountTypesIncludedInEndOfSpendDetermination">If true, when determining the end of spend
+                do not include spend for account types whose IsAccountTypeIncludedForEndOfSpend flag is false.
+                If false (the default), spend of any account type is considered when determining the end of spend.</param>
+            <returns>offset of the last month of spend (or null if there is no spend).
+                Note: offset can be negative</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FindEndOfSpendMonth(CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.Boolean)">
+            <summary>
+            Find the end of spend month offset.
+            The end of spend is the last non-null spend value in any of the account types
+            (unless <paramref name="restrictToAccountTypesIncludedInEndOfSpendDetermination"/> is true,
+            in which case only spend in some account types is considered).
+            </summary>
+            <param name="investmentSpendByAccountType">spend by account type</param>
+            <param name="restrictToAccountTypesIncludedInEndOfSpendDetermination">If true, when determining the end of spend
+                do not include spend for account types whose IsAccountTypeIncludedForEndOfSpend flag is false.
+                If false (the default), spend of any account type is considered when determining the end of spend.</param>
+            <returns>The offset of the last month of spend (or null if there is no spend).
+                Note: the offset can be negative.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FindStartOfSpendMonth(CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.Boolean)">
+            <summary>
+            Find the offset of the start of spend month.
+            The start of spend is the first non-null spend value in any of the account types
+            (unless <paramref name="restrictToAccountTypesIncludedInEndOfSpendDetermination"/> is true,
+            in which case only spend in some account types is considered).
+            </summary>
+            <param name="investmentSpendByAccountType">Spend by account type.</param>
+            <param name="restrictToAccountTypesIncludedInEndOfSpendDetermination">If true, when determining the start of spend
+                do not include spend for account types whose IsAccountTypeIncludedForEndOfSpend flag is false.
+                If false (the default), spend of any account type is considered when determining the start of spend.</param>
+            <returns>The offset of the start month of spend (or null if there is no spend).
+                Note: the offset can be negative.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FindEndOfSpendMonthForAccountType(CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.String)">
+            <summary>
+            Find the end of spend month offset for the given account type.
+            </summary>
+            <param name="investmentSpendByAccountType">The investment spend by account type.</param>
+            <param name="accountTypeName">The account type name.</param>
+            <returns>The offset of the last month of spend for the given account type, or null if there is no spend.
+                Note that the offset can be negative.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FindStartOfSpendMonthForAccountType(CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.String)">
+            <summary>
+            Find the start of spend month offset for the given account type.
+            </summary>
+            <param name="investmentSpendByAccountType">The investment spend by account type.</param>
+            <param name="accountTypeName">The account type name.</param>
+            <returns>The offset of the start month of spend for the given account type, or null if there is no spend.
+                Note that the offset can be negative.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="investmentSpendByAccountType"/> is null.</exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FillWithValueAfterEndOfSpend(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.Nullable{System.Double}[]@,System.Nullable{System.Double})">
+            <summary>
+            Fill the passed-in values array with the specified value for all months after the last month of spend.
+            For example, if the last month of spend is n, then the array will be filled from month n + 1 onwards.
+            If the passed-in values array has a value of null, then allocate the array if there are spends and
+            the values array needs to be filled with the specified value.
+            </summary>
+            <param name="months">The number of months in the <paramref name="values"/> array.</param>
+            <param name="investmentSpendByAccountType">The investment spend by account type.</param>
+            <param name="values">The values array to modify.  If the values array is null, then the array will be
+                allocated if the end of spend can be found. </param>
+            <param name="value">The new value (which may be null) to be used for all months after the last month of spend.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="investmentSpendByAccountType"/> is null.</exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FillWithValueAfterEndOfSpendForAccountType(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.String,System.Nullable{System.Double}[]@,System.Nullable{System.Double})">
+            <summary>
+            Fill the passed-in values array with the specified value for all months after the last month of spend
+            for the given account type.
+            For example, if the last month of spend for the given account type is n, then the array will be filled
+            from month n + 1 onwards.
+            If the passed-in values array has a value of null, then allocate the array if there are spends for the
+            given account type and the values array needs to be filled with the specified value.
+            </summary>
+            <param name="months">The number of months in the <paramref name="values"/> array.</param>
+            <param name="investmentSpendByAccountType">The investment spend by account type</param>
+            <param name="accountTypeName">The account type name.</param>
+            <param name="values">The values array to modify</param>
+            <param name="value">The new value to be used for all months after the last month of spend</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="investmentSpendByAccountType"/> is null.</exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.FillWithValueAfterEndOfSpendForAccountType(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.String,System.Nullable{System.Double}[]@,System.Nullable{System.Double},System.Int32)">
+            <summary>
+            Fill the passed-in values array with the specified value for the requested number of fill months
+            after the last month of spend for the given account type.
+            For example, if the last month of spend for the given account type is n, then the array will be filled
+            from month n + 1 onwards for the requested number of fill months.
+            If the passed-in values array has a value of null, then allocate the array if there are spends for the
+            given account type and the values array needs to be filled with the specified value.
+            </summary>
+            <param name="months">The number of months in the <paramref name="values"/> array.</param>
+            <param name="investmentSpendByAccountType">The investment spend by account type</param>
+            <param name="accountTypeName">The account type name.</param>
+            <param name="values">The values array to modify</param>
+            <param name="value">The new value to be used after the last month of spend</param>
+            <param name="numberOfFillMonths">The number of months to fill after the last month of spend.
+                Use int.MaxValue to fill all months in <paramref name="values"/> after the last month of spend.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="investmentSpendByAccountType"/>
+            is null.</exception>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GetSpendForAccountType(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO,System.String)">
+            <summary>
+            Get the monthly spend for the given account type.
+            </summary>
+            <param name="months">The number of months for which spend is desired.</param>
+            <param name="spendByAccountType">Spends by all account types.</param>
+            <param name="accountTypeName">The account type name.</param>
+            <returns>The monthly spend for the given account type, or null if there is no spend for the account type.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GetSpendForAllAccountTypes(System.Int32,CL.FormulaHelper.DTOs.DistributionByAccountTypeDTO)">
+            <summary>
+            Get the monthly spend for all account types.
+            </summary>
+            <param name="months">The number of months for which spend is desired.</param>
+            <param name="spendByAccountType">Spends by all account types.</param>
+            <returns>The monthly spend for all account types.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.LoadedReplacementCost(System.Nullable{System.Decimal},System.Double,System.Nullable{System.Double})">
+            <summary>
+            Calculate the loaded replacement cost:
+            replacementCost * burdenMultiplier * (1 + costVariationFactor).
+            </summary>
+            <param name="replacementCost">The replacement cost.</param>
+            <param name="burdenMultiplier">The burden multiplier.</param>
+            <param name="costVariationFactor">The cost variation factor.</param>
+            <returns>The loaded replacement cost.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.DirectCostRiskConsequence(System.Nullable{System.Decimal},System.Double,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Calculate the direct cost risk consequence:
+            replacementCost * burdenMultiplier * (1 + costVariationFactor) * extraDamageFactor.
+            </summary>
+            <param name="replacementCost">The replacement cost.</param>
+            <param name="burdenMultiplier">The burden multiplier.</param>
+            <param name="costVariationFactor">The cost variation factor.</param>
+            <param name="extraDamageFactor">The extra damage factor.</param>
+            <returns>The direct cost risk consequence.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GenerationRiskConsequenceInCurrencyUnits(System.Int32,System.Int32,CL.FormulaHelper.DTOs.ConsequenceGroupDTO,System.Nullable{System.Boolean},System.Nullable{System.Double},System.Nullable{System.Double},CL.FormulaHelper.DTOs.StrategyAlternativeDTO)">
+            <summary>
+            Calculate the generation risk consequence in currency units.
+            </summary>
+            <param name="startFiscalYear">The start fiscal year.</param>
+            <param name="months">The number of months for which the generation risk consequence should be calculated.</param>
+            <param name="generationGroup">The generation group associated with the asset.</param>
+            <param name="isSpareAvailable">Is a spare available for the asset.</param>
+            <param name="downtimeWeeksWithSpare">The number of downtime weeks if a spare is available.</param>
+            <param name="downtimeWeeksWithoutSpare">The number of downtime weeks if a spare is not available.</param>
+            <param name="strategyAlternative">The strategy alternative.</param>
+            <returns>The generation risk consequence in currency units.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.GenerationRiskConsequenceInLossUnits(System.Int32,System.Int32,CL.FormulaHelper.DTOs.ConsequenceGroupDTO,System.Nullable{System.Boolean},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Calculate the generation risk consequence in loss (typically MWh) units.
+            </summary>
+            <param name="startFiscalYear">The start fiscal year.</param>
+            <param name="months">The number of months for which the generation risk consequence should be calculated.</param>
+            <param name="generationGroup">The generation group associated with the asset.</param>
+            <param name="isSpareAvailable">Is a spare available for the asset.</param>
+            <param name="downtimeWeeksWithSpare">The number of downtime weeks if a spare is available.</param>
+            <param name="downtimeWeeksWithoutSpare">The number of downtime weeks if a spare is not available.</param>
+            <returns>The generation risk consequence in loss (typically MWh) units.</returns>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.Name">
+            <summary>
+            This method is obsolete. It was needed for R11.1 and earlier releases.
+            It is no longer used as of R11.2, but we're keeping this to avoid failures when recompiling imported old frameworks.
+            In R11.2 this was declared as an abstract method which unfortunately required having the generated formula classes
+            provide an override of this method.
+            As of R11.3 this is now a virtual method and generated formula classes no longer provide an override.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaBase.Description">
+            <summary>
+            This method is obsolete. It was needed for R11.1 and earlier releases.
+            It is no longer used as of R11.2, but we're keeping this to avoid failures when recompiling imported old frameworks.
+            In R11.2 this was declared as an abstract method which unfortunately required having the generated formula classes
+            provide an override of this method.
+            As of R11.3 this is now a virtual method and generated formula classes no longer provide an override.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaCoreFieldInputType">
+            <summary>
+            Enumeration for each type of Formula Core Field Input.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaLikelihoodBase">
+            <summary>
+            Base class for all Likelihood formulas.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.FormulaZipUtil">
+            <summary>
+            Class which encapsulates functionality to read formula debug zip files,
+            Display their outputs in a simple command line UI and execute formulas.
+            This extremely basic UI is not localized and is designed to run in the
+            standalone formula project.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.LaunchFormulaExecutionCommandLineInterface">
+            <summary>
+            Launch the formula execution UI. The path of the zip file will be prompted for
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.ReadFormulaExecutionZip(System.String)">
+            <summary>
+            Read the zip from the path and execute the command line formula runner interface
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.ExtractFormulaInformationFromXml(System.IO.MemoryStream,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            Extract the formula information from the xml
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.SetWindowAndBufferSizes">
+            <summary>
+            Set the minimum window width and height.
+            Set the buffer width to the accomodate all of the columns
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.GetChildElementValue(System.Xml.Linq.XDocument,System.String)">
+            <summary>
+            Get the immediate child element's value.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.ExecuteFormula(System.String,System.Int32,System.Boolean,System.Collections.Concurrent.ConcurrentDictionary{System.String,System.Object})">
+            <summary>
+            Deserialize the passed in xml string and execute the referenced formula with the referenced parameters.
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.ExecuteFormulaImpl(CL.FormulaHelper.MeasureOutputType,System.Type,CL.FormulaHelper.FormulaBase,System.Int32,System.Int32,System.Object,System.Object,System.Nullable{System.Double}[])">
+            <summary>
+            Execute the fomrula implementation with the passed in formula input parameters
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.DisplayFormulaOutput(System.Object,System.Int32,System.Int32)">
+            <summary>
+            Display the formula output. Only the first 'OutputMonthsToDisplay' lines are displayed
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.PadOrTruncateAlignLeft(System.String,System.Int32)">
+            <summary>
+            Pad/Truncate the passed in string, aligning left to the passed in length
+            </summary>
+        </member>
+        <member name="M:CL.FormulaHelper.FormulaZipUtil.PadOrTruncateAlignRight(System.String,System.Int32)">
+            <summary>
+            Pad/Truncate the passed in string, aligning right to the passed in length
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.MeasureOutputType">
+            <summary>
+            Enumeration for the type of formula output
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.MeasureOutputType.ConsqUnitOutput">
+            <summary>
+            The output of a consequence formula in units of the value measure associated
+            with the measure that is using the formula.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.MeasureOutputType.ConsqZynosOutput">
+            <summary>
+            The output of a consequence formula in risk units.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.MeasureOutputType.LikelihoodUnitOutput">
+            <summary>
+            The output of a likelihood formula.
+            </summary>
+        </member>
+        <member name="F:CL.FormulaHelper.MeasureOutputType.InternalOutput">
+            <summary>
+            The output of an internal formula.
+            </summary>
+        </member>
+        <member name="T:CL.FormulaHelper.Version">
+             <summary>
+             This class holds a version that is intended to indicate when there are significant changes
+             in CL.FormulaHelper definitions or capabilities that formulas might depend on.
+             
+             <para>
+             The version number held by this class should be incremented when:
+             (a) the kinds of inputs supplied to formulas or the definitions of existing input types are changed, or
+             (b) there are new helper methods or changes to the signatures of existing helper methods that formulas can directly call.
+             </para>
+             
+             <para>
+             On the main Development branch, the version number consists of MAJOR.MINOR (see Semantic Versioning article
+             at https://semver.org ). We're not using the PATCH part of Semantic Versioning because we're using the
+             version number here to describe an interface, not released software.)
+            
+             Increment the:
+             MAJOR version when you make incompatible(breaking) changes,
+             MINOR version when you add functionality in a backwards-compatible manner.
+             
+             If a version change occurs on a side branch, the version number for the branch consists of
+             MAJOR.MINOR.BRANCH.BMAJOR.BMINOR where MAJOR and MINOR are frozen, BRANCH is the branch name (e.g., R14_2),
+             BMAJOR begins numbering of major changes on the branch(starting at 1 if the change is incompatible, 0 if it is
+             backward-compatible, and BMINOR begins numbering of minor changes on the branch. For example, suppose there is
+             an R14_2 branch that is split from Development when the version is 15.2. Initially the R14_2 branch is at
+             version 15.2. The first change on the R14_2 branch is a backwards-compatible change, which yields version
+             15.2.R14_2.0.1. Then the next change on R14_2 is a breaking change, yielding 15.2.R14_2.1.0.
+             </para>
+             </summary>
+        </member>
+    </members>
+</doc>

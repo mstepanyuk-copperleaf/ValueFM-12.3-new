@@ -1,0 +1,56 @@
+code: "Employee & Contractor Safety Risk"
+nameId: "Employee & Contractor Safety Risk"
+descriptionId: "Employee & Contractor Safety Risk"
+groupCode: "Safety & Security"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Employee & Contractor Safety Risk"
+  nameId: "Employee & Contractor Safety Risk"
+  valueMeasureCode: "Employee & Contractor Safety Risk"
+  sequence: 17
+questionnaires:
+- code: "Automated Risk Mitigation-Employee & Contractor Safety Risk-O"
+  nameId: "Automated Risk Mitigation"
+  descriptionId: "Employee & Contractor Safety Risk Automated Mitigation"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Employee & Contractor Safety Risk"
+    consequenceClassName: "RiskConsequenceAutomaticOutcome"
+    likelihoodClassName: "RiskLikelihoodAutomaticOutcome"
+- code: "Manual Risk-Employee & Contractor Safety Risk-B"
+  nameId: "Manual Risk"
+  descriptionId: "Employee & Contractor Safety Risk"
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Manual Risk Consequence"
+    sequence: 31
+  - measurePromptCode: "Manual Risk Probability"
+    sequence: 103
+  - measurePromptCode: "Rationale"
+    sequence: 169
+  formulas:
+  - measureCode: "Employee & Contractor Safety Risk"
+    consequenceClassName: "RiskConsequenceManual"
+    likelihoodClassName: "RiskLikelihoodManual"
+- code: "Manual Risk-Employee & Contractor Safety Risk-O"
+  nameId: "Manual Risk"
+  descriptionId: "Employee & Contractor Safety Risk"
+  isBaseline: false
+  isDefault: false
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Manual Risk Consequence"
+    sequence: 47
+  - measurePromptCode: "Manual Risk Probability"
+    sequence: 119
+  formulas:
+  - measureCode: "Employee & Contractor Safety Risk"
+    consequenceClassName: "RiskConsequenceManual"
+    likelihoodClassName: "RiskLikelihoodManual"

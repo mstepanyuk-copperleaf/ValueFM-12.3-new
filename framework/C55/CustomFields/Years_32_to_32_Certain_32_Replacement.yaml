@@ -1,0 +1,9 @@
+code: "Years to Certain Replacement"
+nameId: "Years to Certain Replacement"
+descriptionId: "Years to Certain Replacement"
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+isCurrencyValue: false
+maximumNumber: 100
+listItems: []

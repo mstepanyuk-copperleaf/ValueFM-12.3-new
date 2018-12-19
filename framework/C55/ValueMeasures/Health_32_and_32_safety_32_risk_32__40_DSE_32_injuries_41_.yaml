@@ -1,0 +1,13 @@
+code: "Health and safety risk (DSE injuries)"
+nameId: "Health and safety risk (DSE injuries)"
+descriptionId: "Health and safety risk (DSE injuries)"
+color: "#800205"
+consqUnitCode: "Dollar"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "None"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "Risk"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "PositiveWeighting"
+financialMetricsUsage: "FinancialBenefit"

@@ -1,0 +1,9 @@
+code: "OfficeHoursAdditional"
+nameId: "OfficeHoursAdditional"
+descriptionId: "Per office employee, how many additional hours will be required (per\
+  \ year)?"
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+maximumNumber: 1000000
+listItems: []

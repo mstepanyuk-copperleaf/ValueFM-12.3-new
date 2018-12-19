@@ -1,0 +1,25 @@
+code: "Are Initial Effort and Schedule Realistic"
+nameId: "Are Initial Effort and Schedule Realistic"
+descriptionId: "Are Initial Effort and Schedule Realistic"
+type: "DropDownList"
+isCloneable: true
+listType: "Custom"
+listItems:
+- code: "A) Too early to establish effort and schedule estimates"
+  nameId: "A) Too early to establish effort and schedule estimates"
+  value: 0.021000000000000001
+  isObsolete: false
+- code: "B) Ballpark estimates have been developed, no or limited review"
+  nameId: "B) Ballpark estimates have been developed, no or limited review"
+  value: 0.016833333299999999
+  isObsolete: false
+- code: "C) Detailed estimates completed with no or limited review"
+  nameId: "C) Detailed estimates completed with no or limited review"
+  value: 0.012666666700000001
+  isObsolete: false
+- code: "D) Detailed estimates with quality assurance completed (done in comparison\
+    \ to similar projects)"
+  nameId: "D) Detailed estimates with quality assurance completed (done in comparison\
+    \ to similar projects)"
+  value: 0.0085000000000000006
+  isObsolete: false

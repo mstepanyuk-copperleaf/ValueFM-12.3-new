@@ -1,0 +1,13 @@
+code: "Financial Benefits"
+nameId: "Financial Benefits"
+descriptionId: "Financial Impact"
+color: "#23FA46"
+consqUnitCode: "Dollar"
+isObsolete: false
+isAllowedForConstraint: true
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "Benefit"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "PositiveWeighting"
+financialMetricsUsage: "FinancialBenefit"

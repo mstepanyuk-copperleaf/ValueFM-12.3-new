@@ -1,0 +1,13 @@
+code: "Energy Efficiency"
+nameId: "Energy Efficiency"
+descriptionId: "Energy Efficiency"
+color: "#BD257F"
+consqUnitCode: "Megawatt Hour"
+isObsolete: false
+isAllowedForConstraint: true
+likelihoodType: "Probability"
+measureCalculation: "Outcome"
+measureCategory: "Benefit"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "PositiveWeighting"
+financialMetricsUsage: "Ignore"

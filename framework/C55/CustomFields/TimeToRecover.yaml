@@ -1,0 +1,8 @@
+code: "TimeToRecover"
+nameId: "Time to Recover"
+descriptionId: ""
+type: "Number"
+isCloneable: true
+numberDecimals: 1
+maximumNumber: 876000000000
+listItems: []

@@ -1,0 +1,9 @@
+code: "SF6 Reduction"
+descriptionId: "Quantity of SF6 emissions that will be reduced each year? (kg)"
+customFieldCode: "SF6 Reduction"
+isTimeVarying: false
+isRequired: true
+isComment: false
+shortPromptId: "SF6 Reduction"
+promptTextId: "What is the quantity of SF6 emissions that will be reduced each year?\
+  \ (kg)"

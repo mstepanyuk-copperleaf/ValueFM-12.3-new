@@ -1,0 +1,8 @@
+code: "Account Type"
+descriptionId: "Which account type does this affect?"
+customFieldCode: "Account Type"
+isTimeVarying: false
+isRequired: true
+isComment: false
+shortPromptId: "Account Type?"
+promptTextId: "Which account type does this affect?"

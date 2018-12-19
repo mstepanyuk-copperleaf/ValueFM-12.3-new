@@ -1,0 +1,13 @@
+code: "Public Property Risk"
+nameId: "Public Property Risk"
+descriptionId: "Public Property Risk"
+color: "#FF0066"
+consqUnitCode: "Value Unit"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "Risk"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "PositiveWeighting"
+financialMetricsUsage: "Ignore"

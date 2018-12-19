@@ -1,0 +1,44 @@
+code: "Hours Based Condition Score"
+nameId: "Hours Based Condition Score"
+descriptionId: ""
+groupCode: "AssetModels"
+mustImpact: true
+investmentApplicability: "NotApplicable"
+assetTypes:
+- assetTypeCode: "GASCOMPCYL"
+  applicability: "Mandatory"
+  hasCommonBaseline: true
+- assetTypeCode: "GASCOMPENG"
+  applicability: "Mandatory"
+  hasCommonBaseline: true
+- assetTypeCode: "GASLUBE"
+  applicability: "Mandatory"
+  hasCommonBaseline: true
+measures:
+- code: "Hours Based Condition Score"
+  nameId: "Hours Based Condition Score"
+  valueMeasureCode: "Condition"
+  sequence: 167
+questionnaires:
+- code: "ConditionFromHours-B"
+  nameId: "ConditionFromHours-B"
+  descriptionId: ""
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Hours Based Condition Score"
+    consequenceClassName: "ConditionFromHoursBaseline"
+- code: "ConditionFromHours-O"
+  nameId: "ConditionFromHours-O"
+  descriptionId: ""
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "AssetImpact"
+    sequence: 1
+  formulas:
+  - measureCode: "Hours Based Condition Score"
+    consequenceClassName: "ConditionFromHoursOutcome"

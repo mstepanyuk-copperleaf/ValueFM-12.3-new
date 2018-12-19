@@ -1,0 +1,8 @@
+code: "Operating Hours"
+nameId: "Operating Hours"
+descriptionId: ""
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+maximumNumber: 1000000
+listItems: []

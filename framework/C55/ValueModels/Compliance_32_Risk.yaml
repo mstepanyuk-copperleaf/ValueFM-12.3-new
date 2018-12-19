@@ -1,0 +1,56 @@
+code: "Compliance Risk"
+nameId: "Compliance Risk"
+descriptionId: "Compliance Risk"
+groupCode: "Stakeholders & Community"
+mustImpact: true
+investmentApplicability: "Optional"
+assetTypes: []
+measures:
+- code: "Compliance Risk"
+  nameId: "Compliance Risk"
+  valueMeasureCode: "Compliance Risk"
+  sequence: 10
+questionnaires:
+- code: "Automated Risk Mitigation-Compliance Risk-O"
+  nameId: "Automated Risk Mitigation"
+  descriptionId: "Compliance Risk Automated Mitigation"
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts: []
+  formulas:
+  - measureCode: "Compliance Risk"
+    consequenceClassName: "RiskConsequenceAutomaticOutcome"
+    likelihoodClassName: "RiskLikelihoodAutomaticOutcome"
+- code: "Manual Risk-Compliance Risk-B"
+  nameId: "Manual Risk"
+  descriptionId: "Compliance Risk"
+  isBaseline: true
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Manual Risk Consequence"
+    sequence: 29
+  - measurePromptCode: "Manual Risk Probability"
+    sequence: 101
+  - measurePromptCode: "Rationale"
+    sequence: 167
+  formulas:
+  - measureCode: "Compliance Risk"
+    consequenceClassName: "RiskConsequenceManual"
+    likelihoodClassName: "RiskLikelihoodManual"
+- code: "Manual Risk-Compliance Risk-O"
+  nameId: "Manual Risk"
+  descriptionId: "Compliance Risk"
+  isBaseline: false
+  isDefault: false
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "Manual Risk Consequence"
+    sequence: 45
+  - measurePromptCode: "Manual Risk Probability"
+    sequence: 117
+  formulas:
+  - measureCode: "Compliance Risk"
+    consequenceClassName: "RiskConsequenceManual"
+    likelihoodClassName: "RiskLikelihoodManual"

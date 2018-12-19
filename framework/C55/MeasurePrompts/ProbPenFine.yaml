@@ -1,0 +1,8 @@
+code: "ProbPenFine"
+descriptionId: "Likelihood of penalty or fine?"
+customFieldCode: "Risk Probability"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Likelihood of penalt"
+promptTextId: "Likelihood of penalty or fine?"

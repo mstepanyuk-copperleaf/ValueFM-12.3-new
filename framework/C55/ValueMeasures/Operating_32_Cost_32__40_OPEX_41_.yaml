@@ -1,0 +1,13 @@
+code: "Operating Cost (OPEX)"
+nameId: "Operating Cost (OPEX)"
+descriptionId: "Operating Cost (OPEX)"
+color: "#72C519"
+consqUnitCode: "Dollar"
+isObsolete: false
+isAllowedForConstraint: true
+likelihoodType: "None"
+measureCalculation: "Outcome"
+measureCategory: "ExpenditureCost"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

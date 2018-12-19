@@ -1,0 +1,76 @@
+code: "Residual value"
+nameId: "Residual value"
+descriptionId: "A model to determine asset residual value."
+groupCode: "Financial"
+mustImpact: false
+investmentApplicability: "NotApplicable"
+assetTypes:
+- assetTypeCode: "Filter"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Governor"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Lateral"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "LTS"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "LTS Sleeve"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "LTS Valve"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Main"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Metering"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Odour"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Preheating"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Pressure Control"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Riser"
+  applicability: "Optional"
+  hasCommonBaseline: true
+- assetTypeCode: "Service"
+  applicability: "Optional"
+  hasCommonBaseline: true
+measures:
+- code: "Asset effective age"
+  nameId: "Asset effective age"
+  valueMeasureCode: "Asset effective age"
+  sequence: 1
+- code: "Asset residual value"
+  nameId: "Asset residual value"
+  valueMeasureCode: "Asset residual value"
+  sequence: 2
+questionnaires:
+- code: "Residual value residual"
+  nameId: "Residual value"
+  descriptionId: "A questionnaire to evaluate the impact of asset residual value."
+  isBaseline: false
+  isDefault: true
+  allowMeasureItemDuration: true
+  prompts:
+  - measurePromptCode: "AssetEffectiveAge"
+    sequence: 1
+  - measurePromptCode: "AssetValue"
+    sequence: 2
+  - measurePromptCode: "AssetBookAge"
+    sequence: 3
+  - measurePromptCode: "MandComment"
+    sequence: 4
+  formulas:
+  - measureCode: "Asset effective age"
+    consequenceClassName: "ResValAssetAge"
+  - measureCode: "Asset residual value"
+    consequenceClassName: "ResValAssetValue"

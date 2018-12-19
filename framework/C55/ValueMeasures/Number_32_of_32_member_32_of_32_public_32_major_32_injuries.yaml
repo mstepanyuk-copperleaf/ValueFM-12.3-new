@@ -1,0 +1,13 @@
+code: "Number of member of public major injuries"
+nameId: "Number of member of public major injuries"
+descriptionId: "Number of member of public major injuries"
+color: "#800196"
+consqUnitCode: "Number of major injuries"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "Probability"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ServiceMeasure"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "Ignore"

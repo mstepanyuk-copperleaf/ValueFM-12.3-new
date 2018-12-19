@@ -1,0 +1,11 @@
+code: "Gen Asset Prob Failure Creates Hazard"
+descriptionId: "Example:  Only 25% of transformer failures result in explosion or\
+  \ fire that could injure personnel"
+customFieldCode: "Gen Asset Prob Failure Creates Hazard"
+isTimeVarying: true
+isRequired: true
+isComment: false
+shortPromptId: "Probability the asse"
+promptTextId: "Probability the asset fails in a way that creates hazard to personnel\
+  \ in the area (%)"
+defaultValue: "0"

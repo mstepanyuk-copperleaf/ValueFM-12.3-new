@@ -1,0 +1,13 @@
+code: "Cost of total mileage – Private"
+nameId: "Cost of total mileage – Private"
+descriptionId: "Cost of total mileage – Private"
+color: "#800216"
+consqUnitCode: "Dollar"
+isObsolete: false
+isAllowedForConstraint: false
+likelihoodType: "None"
+measureCalculation: "BaselineMinusOutcome"
+measureCategory: "ExpenditureCost"
+monthToYearAggregation: "Sum"
+valueFunctionUsage: "Disallow"
+financialMetricsUsage: "FinancialCost"

@@ -1,0 +1,8 @@
+code: "Annual Benefit"
+nameId: "Annual Benefit"
+descriptionId: "The annual economic benefit ($)"
+type: "Number"
+isCloneable: true
+numberDecimals: 0
+maximumNumber: 100000000
+listItems: []

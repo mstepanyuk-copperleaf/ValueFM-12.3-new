@@ -1,0 +1,27 @@
+code: "Type of Contract"
+nameId: "Type of Contract"
+descriptionId: "Type of Contract"
+type: "DropDownList"
+isCloneable: true
+listType: "Custom"
+listItems:
+- code: "A) Too early to understand contracting approach"
+  nameId: "A) Too early to understand contracting approach"
+  value: 0.021000000000000001
+  isObsolete: false
+- code: "B) Complex contract/procurement, limited history of success, complex processes,\
+    \ difficulty w/change"
+  nameId: "B) Complex contract/procurement, limited history of success, complex processes,\
+    \ difficulty w/change"
+  value: 0.016833333299999999
+  isObsolete: false
+- code: "C) Moderate level of contract complexity or limited experience with type\
+    \ of contract"
+  nameId: "C) Moderate level of contract complexity or limited experience with type\
+    \ of contract"
+  value: 0.012666666700000001
+  isObsolete: false
+- code: "D) Simple contracting, limited roadblocks for success and prior track record"
+  nameId: "D) Simple contracting, limited roadblocks for success and prior track record"
+  value: 0.0085000000000000006
+  isObsolete: false
