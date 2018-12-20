@@ -30,7 +30,7 @@ questionnaires:
     sequence: 3
   formulas:
   - measureCode: "Emission Levels"
-    consequenceClassName: "AutomaticMitigationConsequence_msBase"
+    consequenceClassName: "EmissionLevelsKPIConsequence"
     likelihoodClassName: "BenefitLikelihood"
   - measureCode: "Emission Levels - KPI"
     consequenceClassName: "EmissionLevelsKPIConsequence"
