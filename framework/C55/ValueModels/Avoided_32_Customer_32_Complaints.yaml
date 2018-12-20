@@ -32,7 +32,7 @@ questionnaires:
   - measureCode: "Complaint risk"
     consequenceClassName: "ComplaintRisk"
   - measureCode: "Expected number of complaints"
-    consequenceClassName: "AutomaticMitigationConsequence_msBase"
+    consequenceClassName: "IdentityFormula"
     likelihoodClassName: "ComplaintsNumber"
 - code: "Complaints residual"
   nameId: "Complaints"
@@ -49,7 +49,7 @@ questionnaires:
     sequence: 6
   formulas:
   - measureCode: "Complaint risk"
-    consequenceClassName: "AutomaticMitigationConsequence_msBase"
+    consequenceClassName: "ComplaintRisk"
   - measureCode: "Expected number of complaints"
-    consequenceClassName: "AutomaticMitigationConsequence_msBase"
+    consequenceClassName: "IdentityFormula"
     likelihoodClassName: "ComplaintsNumber"
