@@ -46,7 +46,7 @@ questionnaires:
     consequenceClassName: "EnergyEfficiencyConsequence"
     likelihoodClassName: "BenefitLikelihood"
   - measureCode: "Energy Savings Total"
-    consequenceClassName: "EnergySavingsConsequence"
+    consequenceClassName: "AutomaticMitigationConsequence_msBase"
     likelihoodClassName: "BenefitLikelihood"
   - measureCode: "Energy Savings VVO"
     consequenceClassName: "VVOEnergySavingsConsequence"
